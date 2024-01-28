@@ -72,12 +72,12 @@ with lib;
 			(pkgs.stdenv.isDarwin)
 	)) [
 		# These aren't available on aarch64 linux
-		spotify
-		spotify-tui
-		slack
+		#spotify
+		#spotify-tui
+		#slack
 	] ++ lib.optionals osConfig.gui.enable [
-		freerdp
-		mpv
+		#freerdp
+		#mpv
 	] ++ lib.optionals (osConfig.gui.enable && pkgs.stdenv.isLinux) [
 		# chromium
 
@@ -96,45 +96,21 @@ with lib;
 
 	programs.git = {
 		enable			= true;
-		lfs.enable		= true;
 
-		userEmail		= "m@minego.net";
-		userName		= "Micah N Gorrell";
+		userEmail		= "m@test.net";
+		userName		= "Test";
 
-		extraConfig = {
-			url."git@gitlab.com:".insteadOf = [ "https://gitlab.com" ];
-			init.defaultBranch = "main";
-			pull.rebase	= true;
-		};
-
-		includes = [
-			{
-				condition = "gitdir:~/src/vaas/";
-				contents.user = {
-					email = "micah.gorrell@venafi.com";
-					name = "Micah N Gorrell";
-				};
-			}
-
-			{
-				condition = "gitdir:~/src/venafi/";
-				contents.user = {
-					email = "micah.gorrell@venafi.com";
-					name = "Micah N Gorrell";
-				};
-			}
-		];
 	};
 
-	home.file.ssh-config = {
-		source = ./dotfiles/ssh-config;
-		target = "./.ssh/config";
-	};
+	#home.file.ssh-config = {
+	#	source = ./dotfiles/ssh-config;
+	#	target = "./.ssh/config";
+	#};
 
-	home.file.ssh-rc = {
-		source = ./dotfiles/ssh-rc;
-		target = "./.ssh/rc";
-	};
+	#home.file.ssh-rc = {
+	#	source = ./dotfiles/ssh-rc;
+	#	target = "./.ssh/rc";
+	#};
 
 	programs.readline.enable = true;
 	home.file.".inputrc".source = ./dotfiles/inputrc;
@@ -188,6 +164,6 @@ with lib;
 
 	# Don't touch
 	programs.home-manager.enable = true;
-	home.stateVersion = "23.11";
+	home.stateVersion = "24.05";
 }
 

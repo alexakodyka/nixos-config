@@ -6,9 +6,9 @@ with lib;
 		description		= "Details about my default user";
 
 		default = {
-			user		= "m";
-			fullName	= "Micah N Gorrell";
-			email		= "m@minego.net";
+			user		= "alex";
+			fullName	= "Aleex";
+			email		= "alex@test.net";
 		};
 	};
 
@@ -35,8 +35,8 @@ with lib;
 	};
 
 	config = {
-		time.timeZone = lib.mkDefault "America/Denver";
-
+		time.timeZone = lib.mkDefault "Asia/Yekaterinburg";
+		
 		# Enable the nix command and flakes
 		nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

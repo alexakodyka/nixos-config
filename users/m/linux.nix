@@ -4,7 +4,7 @@
 	users.users."${config.me.user}" = {
 		shell								= pkgs.zsh;
 		description							= config.me.fullName;
-		openssh.authorizedKeys.keys			= config.authorizedKeys.keys;
+		#openssh.authorizedKeys.keys			= config.authorizedKeys.keys;
 
 		extraGroups = [
 			"networkmanager"

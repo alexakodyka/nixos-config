@@ -150,6 +150,9 @@
 			# PinePhone Pro
 			marvin		= import ./hosts/marvin		{ inherit inputs overlays linuxOverlays; };
 
+			# Lenovo pad
+			lenovo		= import ./hosts/lenovo		{ inherit inputs overlays linuxOverlays; };
+
 			# Steam Deck
 			wonko		= import ./hosts/wonko		{ inherit inputs overlays linuxOverlays; };
 		};
